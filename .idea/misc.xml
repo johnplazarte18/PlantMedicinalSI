@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/drawable/f.xml" value="0.2203125" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/drawable/fondo_vacio_imagen.xml" value="0.2203125" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/drawable/round_button.xml" value="0.2203125" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/drawable/splashscreen.xml" value="0.18" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_menu_principal.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_resultado.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
