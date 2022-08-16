@@ -11,8 +11,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnAnalizar: Button
@@ -26,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnSelImagen=findViewById<Button>(R.id.btnSelImagen)
+        val btnVerCatalogo=findViewById<Button>(R.id.btnVerCatalogo)
         btnAnalizar=findViewById<Button>(R.id.btnAnalizar)
         val btnCamara=findViewById<Button>(R.id.btnCapImagen)
         img_view=findViewById<ImageView>(R.id.imvResult)
@@ -44,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         })
         btnAnalizar.setOnClickListener{
             val intent1 = Intent(this, Resultado::class.java)
+            startActivity(intent1)
+        }
+        btnVerCatalogo.setOnClickListener{
+            val intent1 = Intent(this, catologo::class.java)
             startActivity(intent1)
         }
     }

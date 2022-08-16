@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnEmpezar"
+        android:id="@+id/btnVerCatalogo"
         android:layout_width="360dp"
         android:layout_height="48dp"
         android:layout_marginTop="72dp"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmpezar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
 
     <Button
         android:id="@+id/btnSelImagen"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmpezar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
 
     <Button
         android:id="@+id/btnAnalizar"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmpezar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
 
     <TextView
         android:id="@+id/txtNota"
