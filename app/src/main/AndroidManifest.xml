@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantMedicinalSI">
         <activity
+            android:name=".InfoPlant"
+            android:exported="false" />
+        <activity
             android:name=".catologo"
             android:exported="false" />
         <activity

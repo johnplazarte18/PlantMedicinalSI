@@ -4,78 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnVerCatalogo"
-        android:layout_width="360dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="#009900"
-        android:text="Ver catálogo"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
+    <ImageButton
+        android:id="@+id/btnSelImagen"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/action_button"
+        android:elevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:srcCompat="@drawable/selectimg"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnCapImagen"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/action_button"
+        android:elevation="12dp"
+        app:layout_constraintStart_toEndOf="@+id/btnSelImagen"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:srcCompat="@drawable/camara"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnVerCatalogo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/action_button"
+        android:contentDescription="Ver catálogo"
+        android:elevation="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnSelImagen"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        app:srcCompat="@drawable/vercatalogo" />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="355dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif"
+        android:foregroundTint="#000000"
+        android:text="Medicinal Plant Snap"
+        android:textAlignment="center"
+        android:textColor="#373737"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnCapImagen"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="#000000"
-        android:text="Capturar imagen"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
-
-    <Button
-        android:id="@+id/btnSelImagen"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/round_button"
-        android:backgroundTint="#990093"
-        android:text="Seleccionar imagen"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
 
     <Button
         android:id="@+id/btnAnalizar"
         android:layout_width="360dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#2196F3"
+        android:elevation="16dp"
         android:text="Analizar"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imvResult" />
 
     <ImageView
         android:id="@+id/imvResult"
-        android:layout_width="338dp"
-        android:layout_height="443dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="402dp"
+        android:layout_height="337dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerCatalogo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSelImagen" />
 
     <TextView
         android:id="@+id/txtNota"
@@ -91,24 +103,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
-
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="355dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="cursive"
-        android:foregroundTint="#000000"
-        android:text="Medicinal Plant Snap"
-        android:textAlignment="center"
-        android:textColor="#373737"
-        android:textSize="34sp"
-        android:textStyle="normal|bold"
-        android:verticalScrollbarPosition="defaultPosition"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

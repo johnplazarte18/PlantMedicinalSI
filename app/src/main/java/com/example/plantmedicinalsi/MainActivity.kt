@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -22,11 +23,12 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_PlantMedicinalSI)
 
         super.onCreate(savedInstanceState)
+        this.supportActionBar?.hide()
         setContentView(R.layout.activity_main)
-        val btnSelImagen=findViewById<Button>(R.id.btnSelImagen)
-        val btnVerCatalogo=findViewById<Button>(R.id.btnVerCatalogo)
+        val btnSelImagen=findViewById<ImageButton>(R.id.btnSelImagen)
+        val btnVerCatalogo=findViewById<ImageButton>(R.id.btnVerCatalogo)
         btnAnalizar=findViewById<Button>(R.id.btnAnalizar)
-        val btnCamara=findViewById<Button>(R.id.btnCapImagen)
+        val btnCamara=findViewById<ImageButton>(R.id.btnCapImagen)
         img_view=findViewById<ImageView>(R.id.imvResult)
         txtNota=findViewById<TextView>(R.id.txtNota)
 
