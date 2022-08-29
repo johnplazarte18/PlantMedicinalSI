@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var bitmap: Bitmap
     lateinit var txtNota: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(2000)
-        setTheme(R.style.Theme_PlantMedicinalSI)
+        //Thread.sleep(2000)
+        //setTheme(R.style.Theme_PlantMedicinalSI)
 
         super.onCreate(savedInstanceState)
         this.supportActionBar?.hide()

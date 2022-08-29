@@ -1,17 +1,23 @@
 package com.example.plantmedicinalsi
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.regex.Pattern
 
-class CustomAdapter:RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
+class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
-    val titles= arrayOf("Plant 1","Plant 2","Plant 3","Plant 4","Plant 5","Plant 6")
-    val subTitles= arrayOf("NCientifico 1","NCientifico 2","NCientifico 3","NCientifico 4","NCientifico 5","Plant 6")
-    val images= arrayOf(R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground)
+
+    val ltPlantas = mutableListOf<Planta>()
+    var listaLlena=false
+
+    var onItemClick:((Planta) ->Unit)?=null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v=LayoutInflater.from(parent.context).inflate(R.layout.card_plants_layout,parent,false)
@@ -19,13 +25,20 @@ class CustomAdapter:RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemTitle.text=titles[position]
-        holder.itemSubTitle.text=subTitles[position]
-        holder.itemImage.setImageResource(images[position])
+        val planta=ltPlantas[position]
+        holder.itemTitle.text=planta.nombrePlanta
+        holder.itemSubTitle.text=planta.nombreCientifico
+        holder.itemImage.setImageResource(R.drawable.ic_launcher_foreground)
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(planta)
+        }
     }
 
     override fun getItemCount(): Int {
-        return titles.size
+        if(!listaLlena){
+            llenarLista()
+        }
+        return ltPlantas.size
     }
 
     inner class  ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
@@ -39,8 +52,18 @@ class CustomAdapter:RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
             itemSubTitle=itemView.findViewById(R.id.item_subtitle)
         }
     }
+    private fun llenarLista() {
+        val minput = InputStreamReader(context.assets.open("plantas.csv"))
+        val reader = BufferedReader(minput)
 
+        var line: String?
 
-
-
+        while (reader.readLine().also { line = it } != null) {
+            val row = Pattern.compile(";").split(line)
+            var planta = Planta(row[0],row[1],row[2])
+            ltPlantas.add(planta)
+        }
+        listaLlena=true
+    }
 }
+
