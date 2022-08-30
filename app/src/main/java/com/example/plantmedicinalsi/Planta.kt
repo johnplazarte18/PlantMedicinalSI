@@ -5,8 +5,10 @@ import android.os.Parcelable
 
 data class Planta(val id:String,
                   val nombrePlanta:String,
-                  val nombreCientifico:String): Parcelable {
+                  val nombreCientifico:String,
+                  val imagen:String): Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!
@@ -17,6 +19,7 @@ data class Planta(val id:String,
         parcel.writeString(id)
         parcel.writeString(nombrePlanta)
         parcel.writeString(nombreCientifico)
+        parcel.writeString(imagen)
     }
 
     override fun describeContents(): Int {

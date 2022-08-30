@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.regex.Pattern
+import android.graphics.drawable.Drawable
+import java.io.InputStream
+
 
 class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
@@ -25,10 +28,15 @@ class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.Vie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         val planta=ltPlantas[position]
         holder.itemTitle.text=planta.nombrePlanta
         holder.itemSubTitle.text=planta.nombreCientifico
-        holder.itemImage.setImageResource(R.drawable.ic_launcher_foreground)
+
+        val ims: InputStream = context.getAssets().open("imgPlantas/"+planta.imagen)
+        val d = Drawable.createFromStream(ims, null)
+        holder.itemImage.setImageDrawable(d)
+
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(planta)
         }
@@ -60,7 +68,7 @@ class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.Vie
 
         while (reader.readLine().also { line = it } != null) {
             val row = Pattern.compile(";").split(line)
-            var planta = Planta(row[0],row[1],row[2])
+            var planta = Planta(row[0],row[1],row[2],row[3])
             ltPlantas.add(planta)
         }
         listaLlena=true
