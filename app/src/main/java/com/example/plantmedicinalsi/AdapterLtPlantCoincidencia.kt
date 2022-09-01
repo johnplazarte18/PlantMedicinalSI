@@ -7,14 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.regex.Pattern
 import android.graphics.drawable.Drawable
 import android.widget.ProgressBar
 import java.io.InputStream
-import java.math.RoundingMode
-import java.text.DecimalFormat
 
 
 class AdapterLtPlantCoincidencia(var context: Context,var ltPlantas: MutableList<Planta>):RecyclerView.Adapter<AdapterLtPlantCoincidencia.ViewHolder>(){

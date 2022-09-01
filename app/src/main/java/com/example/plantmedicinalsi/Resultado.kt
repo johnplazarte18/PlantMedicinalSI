@@ -31,6 +31,12 @@ class Resultado : AppCompatActivity() {
 
         recyclerView.layoutManager= LinearLayoutManager(this)
         recyclerView.adapter=adapter
+
+        adapter.onItemClick={
+            val intent = Intent(this, InfoPlant::class.java)
+            intent.putExtra("planta",it)
+            startActivity(intent)
+        }
     }
 
     private fun asignarCoincidencia(floatArray: FloatArray) {
