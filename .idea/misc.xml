@@ -15,7 +15,8 @@
         <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_menu_principal.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/activity_resultado.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/card_plants_layout.xml" value="0.1" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/card_plants_coincidence_layout.xml" value="0.25" />
+        <entry key="..\:/Users/jhonp/Documents/Proyectos/Kotlin/PlantMedicinalSI/app/src/main/res/layout/card_plants_layout.xml" value="0.18" />
       </map>
     </option>
   </component>

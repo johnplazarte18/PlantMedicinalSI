@@ -14,7 +14,7 @@ import android.graphics.drawable.Drawable
 import java.io.InputStream
 
 
-class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
+class AdapterLtPlant(var context: Context):RecyclerView.Adapter<AdapterLtPlant.ViewHolder>(){
 
 
     val ltPlantas = mutableListOf<Planta>()
@@ -55,9 +55,9 @@ class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.Vie
         var itemSubTitle:TextView
 
         init {
-            itemImage=itemView.findViewById(R.id.item_image)
-            itemTitle=itemView.findViewById(R.id.item_title)
-            itemSubTitle=itemView.findViewById(R.id.item_subtitle)
+            itemImage=itemView.findViewById(R.id.item_image_c)
+            itemTitle=itemView.findViewById(R.id.item_title_c)
+            itemSubTitle=itemView.findViewById(R.id.item_subtitle_c)
         }
     }
     private fun llenarLista() {
@@ -68,7 +68,7 @@ class CustomAdapter(var context: Context):RecyclerView.Adapter<CustomAdapter.Vie
 
         while (reader.readLine().also { line = it } != null) {
             val row = Pattern.compile(";").split(line)
-            var planta = Planta(row[0],row[1],row[2],row[3])
+            var planta = Planta(row[0],row[1],row[2],row[3],0f)
             ltPlantas.add(planta)
         }
         listaLlena=true

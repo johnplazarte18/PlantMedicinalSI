@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="138dp"
         android:padding="16dp">
 
         <ImageView
@@ -47,6 +47,31 @@
             android:text="nombre cientifico"
             android:textColor="#3E3E3E"
             android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pgbNivelCoincidencia"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/item_image_c"
+            android:max="100"
+            android:progress="45"
+            android:progressTint="#4CAF50" />
+
+        <TextView
+            android:id="@+id/txtCoincidencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/pgbNivelCoincidencia"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="Coincidencia : 10%" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

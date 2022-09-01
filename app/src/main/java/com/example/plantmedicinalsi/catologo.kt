@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.regex.Pattern
 
 class catologo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +14,7 @@ class catologo : AppCompatActivity() {
 
 
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
-        val adapter=CustomAdapter(this)
+        val adapter=AdapterLtPlant(this)
 
         recyclerView.layoutManager=LinearLayoutManager(this)
         recyclerView.adapter=adapter

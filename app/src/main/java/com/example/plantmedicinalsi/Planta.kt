@@ -6,12 +6,14 @@ import android.os.Parcelable
 data class Planta(val id:String,
                   val nombrePlanta:String,
                   val nombreCientifico:String,
-                  val imagen:String): Parcelable {
+                  val imagen:String,
+                  val coincidencia:Float): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.readString()!!
+        parcel.readString()!!,
+        parcel.readFloat()!!
     ) { }
 
 
@@ -20,6 +22,7 @@ data class Planta(val id:String,
         parcel.writeString(nombrePlanta)
         parcel.writeString(nombreCientifico)
         parcel.writeString(imagen)
+        parcel.writeString(coincidencia.toString())
     }
 
     override fun describeContents(): Int {
