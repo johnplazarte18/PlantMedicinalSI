@@ -20,6 +20,7 @@ class Resultado : AppCompatActivity() {
     val ltPlantas = mutableListOf<Planta>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.supportActionBar?.hide()
         setContentView(R.layout.activity_resultado)
 
         val floatArray = intent.getFloatArrayExtra("probabilidad")
