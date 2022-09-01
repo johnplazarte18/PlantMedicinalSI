@@ -8,10 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.example.plantmedicinalsi.ml.ModelPlantMedicinal
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -73,12 +70,17 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == 250){
-            img_view.setImageURI(data?.data)
+            try{
+                img_view.setImageURI(data?.data)
 
-            var uri : Uri?= data?.data
-            bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
-            btnAnalizar.visibility=View.VISIBLE
-            txtNota.visibility=View.GONE
+                var uri : Uri?= data?.data
+                bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+                btnAnalizar.visibility=View.VISIBLE
+                txtNota.visibility=View.GONE
+            }catch (e:Exception){
+                Toast.makeText(this, "Imagen no seleccionada", Toast.LENGTH_SHORT).show()
+            }
+
         }
         else if(requestCode == 200 && resultCode == Activity.RESULT_OK){
             bitmap = data?.extras?.get("data") as Bitmap
